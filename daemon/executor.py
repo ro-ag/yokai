@@ -1,9 +1,11 @@
 import zmq
 import subprocess
-
+import os
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("ipc:///tmp/daemon.ipc")  # IPC socket
+s_pid = str(os.getpid())
+print("running daemon from pid: " + s_pid)
 
 while True:
     #  Wait for next request from client
