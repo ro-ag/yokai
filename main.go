@@ -15,7 +15,7 @@ type Daemon struct {
 }
 
 func NewDaemon() *Daemon {
-	cmd := exec.Command("python3", "/path/to/daemon.py")
+	cmd := exec.Command("python3", "./daemon/executor.py")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
